@@ -1,0 +1,13 @@
+<div class="review_item">
+    <div class="col-md-12"><%= review.msg %><br></div>
+    <div class="col-md-12"><%= review.user.email %>
+      <%- if can_edit %>
+      <div class="pull-right">
+        <%= link_to 'Edit', edit_product_review_path(@product, review), class:'text-warning' %>
+        <%= link_to 'Remove', product_review_path(@product, review), method: :delete, class:'text-danger remove_review', remote: true %>
+      </div>
+      <% end %>
+      <br>
+      <br>
+    </div>
+</div>

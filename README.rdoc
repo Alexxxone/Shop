@@ -1,0 +1,8 @@
+== README
+
+configure database.yml
+rake db:migrate
+
+admin user
+login - admin@gmail.com
+password - 12345678

@@ -1,0 +1,30 @@
+<h1>Listing reviews</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Msg</th>
+      <th>Product</th>
+      <th>User</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr class="review_item">
+        <td><%= review.msg %></td>
+        <td><%= review.product.title %></td>
+        <td><%= review.user.email %></td>
+        <td>
+        <%= link_to 'Show', product_review_path(review.product, review)%>
+        <%= link_to 'Edit', edit_product_review_path(review.product, review) %>
+        <%= link_to 'Destroy', product_review_path(review.product, review), method: :delete, data: { confirm: 'Are you sure?' }, class: 'remove_review_index', remote: true %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Review', new_product_review_path %>

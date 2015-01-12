@@ -1,0 +1,13 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <%= link_to 'All', products_path %>
+  </li>
+    <%- @categories.each do |category| %>
+          <li class="list-group-item">
+            <%= link_to category.name.capitalize, category_products_path(category) %>
+          </li>
+    <% end %>
+  <%- if can_edit %>
+      <li class="list-group-item"><%= link_to 'Manage Categories', categories_path %></li>
+  <% end %>
+</ul>
