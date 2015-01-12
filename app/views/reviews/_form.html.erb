@@ -1,4 +1,4 @@
-<%= form_for [@review.product,@review] do |f| %>
+<%= form_for [@review.product,@review], html: {class: 'form-horizontal'}  do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -10,12 +10,13 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :msg %><br>
-    <%= f.text_area :msg %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group">
+      <%= f.label :msg, class: 'col-lg-2 control-label'  %>
+      <div class="col-lg-10">
+        <%= f.text_area :msg, class: 'form-control'  %>
+      </div>
+    </div>
+    <div class="form-group">
+        <%= f.submit class: 'btn btn-success' %>
+    </div>
 <% end %>

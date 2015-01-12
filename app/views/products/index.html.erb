@@ -8,8 +8,9 @@
         <%= link_to  product.title,product %>
         <br>
         <%- if can_edit %>
-           <%= link_to 'Edit', edit_product_path(product), class: 'text-warning' %>
-           <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %>
+           <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-xs btn-warning' %>
+           <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+           <%= link_to 'Manage Reviews', product_reviews_path(product),class: 'btn btn-xs btn-default' %>
           <br>
         <% end %>
         <br>
